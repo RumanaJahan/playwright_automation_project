@@ -2,7 +2,7 @@
 import { test, expect } from '../../utils/baseTest.js';
 import * as productPage from '../../pageObject/productPage.js';
 
-test('should launch the test cases page', async ({ page }) => {
-  await productPage.launchTestCasesPage(page);
+test('should launch the test cases page when click test cases button', async ({ page }) => {
+  await productPage.launchTestCasesPageViaButton(page);
 });
 
