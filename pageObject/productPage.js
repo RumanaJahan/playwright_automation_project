@@ -21,10 +21,8 @@ export async function launchTestCasesPage(page)
     await expect(page).toHaveURL(/.*test_cases/);
     
     //Assert that the heading 'Test Cases' is visible on the page
-    await expect(page.locator('xpath=//*[@id="form"]/div/div[1]/div/h2/b')).toHaveText('Test Cases');
+    await expect(page.locator('h2.title')).toHaveText('Test Cases');
 
     //Log a message to the console indicating successful navigation
     console.log('Test Cases page launched successfully');
-
-
 }
