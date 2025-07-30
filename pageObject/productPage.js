@@ -47,3 +47,25 @@ export async function launchTestCasesPageViaMenu(page)
     //Log a message to the console indicating successful navigation
     console.log('Test Cases page launched successfully');
 }
+
+export async function launchProductPage(page) 
+{
+   
+    //Locate and click the 'Test Cases' link from the navigation bar
+    const productsLink = page.locator('header').getByRole('link', { name: 'Products' });
+    
+    //Ensure it is visible before interacting
+    productsLink.waitFor({ state: 'visible' });
+    
+    //Click the 'Products' link
+    await productsLink.click();
+     
+    //Assert that the URL contains 'product' to confirm navigation
+    await expect(page).toHaveURL(/.*product/);
+
+    //Assert that the heading 'All Products' is visible on the page
+    await expect(page.locator('h2.title')).toHaveText('All Products');
+
+    // Log a message to the console indicating successful navigation
+    console.log('Product page launched successfully');
+}
