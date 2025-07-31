@@ -1,4 +1,6 @@
-//verifyTestCasesPage.test.js
+//verifyTestCasesPageViaButton.test.js
+// This test verifies the functionality of launching the Test Cases page via a button click
+
 import { test, expect } from '../../utils/baseTest.js';
 import * as productPage from '../../pageObject/productPage.js';
 
